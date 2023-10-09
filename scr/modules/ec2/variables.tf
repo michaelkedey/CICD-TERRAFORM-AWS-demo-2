@@ -33,6 +33,6 @@ variable "names"{
 }
 
 variable "key_name"{
-    default = "gina"
+    default = "ginakey"
     type = string
 }

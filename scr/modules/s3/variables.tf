@@ -1,5 +1,5 @@
 variable "demo_bucket"{
-    default = "my_storage_bucket"
+    default = "sedemstoragebucket333"
     type = string
 }
 
