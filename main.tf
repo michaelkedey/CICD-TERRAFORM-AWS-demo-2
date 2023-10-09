@@ -1,11 +1,14 @@
 module "ec2" {
-  source = "./src/modules/ec2"
+  source          = "./scr/modules/ec2"
+  subnet_id       = module.vpc.private_subnet1_id
+  security_groups = module.vpc.security_group_id
 }
 
 module "vpc" {
-  source = "./src/modules/vpc"
+  source = "./scr/modules/vpc"
 }
 
 module "s3" {
-  source = "./src/modules/s3"
+  source = "./scr/modules/s3"
 }
+    
