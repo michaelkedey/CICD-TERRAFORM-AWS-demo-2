@@ -53,10 +53,16 @@ variable "sg_out_protocol" {
   type        = number
 }
 
+variable "allow_icmp" {
+  default     = -1
+  description = "allow icmp traffic"
+  type        = number
+}
+
 variable "sg_in_protocol" {
-  default     = "tcp"
+  default     = ["tcp", "icmp"]
   description = "allow only tcp traffic in"
-  type        = string
+  type        = list(string)
 }
 
 variable "sg_cider" {

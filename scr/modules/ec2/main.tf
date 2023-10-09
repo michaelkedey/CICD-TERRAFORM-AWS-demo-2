@@ -4,7 +4,7 @@ resource "aws_instance" "name" {
     subnet_id = var.subnet_id
     associate_public_ip_address = var.ip["on"]
     security_groups = var.security_groups
-    user_data = "${path.module}/apache_ssh_config.sh"
+    user_data = file("${path.module}/apache_ssh_config.sh")
     provider = aws.demo
     tags = {Name = var.names["server_name"]}
     key_name = var.key_name

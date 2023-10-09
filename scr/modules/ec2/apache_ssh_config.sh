@@ -15,5 +15,8 @@ sudo systemctl start apache2
 echo '<h1>Congrats! you have installed apache</h1>' > var/www/html/index.html
 
 # Change the SSH port to 273
-sudo sed -i 's/Port 22/Port 273/' /etc/ssh/sshd_config
-sudo systemctl restart ssh
+new_port=273
+sudo sed -i "s/^#Port 22/Port $new_port/" /etc/ssh/sshd_config
+#sudo sed -i 's/Port 22/Port 273/' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+#sudo ufw allow $new_port/tcp

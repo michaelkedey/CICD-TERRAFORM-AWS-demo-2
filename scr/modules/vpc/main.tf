@@ -62,14 +62,21 @@ resource "aws_security_group" "demo_traffic" {
   ingress {
     from_port   = var.custom_ssh
     to_port     = var.custom_ssh
-    protocol    = var.sg_in_protocol
+    protocol    = var.sg_in_protocol[0]
     cidr_blocks = var.sg_cider
   }
 
   ingress {
     from_port   = var.web
     to_port     = var.web
-    protocol    = var.sg_in_protocol
+    protocol    = var.sg_in_protocol[0]
+    cidr_blocks = var.sg_cider
+  }
+
+  ingress {
+    from_port   = var.allow_icmp
+    to_port     = var.allow_icmp
+    protocol    = var.sg_in_protocol[1]
     cidr_blocks = var.sg_cider
   }
 
