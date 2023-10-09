@@ -26,11 +26,11 @@ variable "vpc_names" {
 variable "demosg_name" {
   default     = "demo_security_group"
   type        = string
-  description = "allow ssh on port 233"
+  description = "allow ssh on custom port"
 }
 
 variable "custom_ssh" {
-  default   = 233
+  default   = 273
   sensitive = true
   type      = number
 }
