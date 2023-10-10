@@ -1,5 +1,6 @@
 terraform {
   backend "s3" {
+    #bucket exists already
     bucket = "sedem-terra333-bucket"
     key    = "cicd-git-demo2/terraform.tfstate"
     region = "us-east-1"
